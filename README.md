@@ -1,1 +1,4 @@
 # rock_paper_scissor
+THE ODIN PROJECT
+
+ROCK PAPER SCISSOR GAME 
