@@ -19,20 +19,42 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-shadow: 3px 2px 2px lightcoral;
 }
 
 .scoreboard .roundWinner{
     font-family: 'Press Start 2P', cursive ;
     font-size: xx-large ;
-    padding: 13px;
+    padding: 40px;
 }
 
 .you ,.comp {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
 }
-
+.you p, .comp p{
+    text-align: center;
+}
 .scores{
     display: flex;
     gap: 180px;
+}
+
+.allButtons{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding:50px;
+}
+
+.allButtons button, .allButtons img{
+    width: auto;
+    height: 210px;
+    background-color: #76d0d34a;
+
+}
+
+.allButtons button{
+    border: 2px solid lightslategrey;
+    border-radius: 15px;
 }
