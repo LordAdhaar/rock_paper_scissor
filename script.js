@@ -63,6 +63,9 @@ function reset(){
 
 function clickToPlayRound(){
 
+    console.log(buttons);
+    console.log(this);
+    this.classList.toggle("clicked");
     let roundResult = playRound(this.textContent, getComputerChoice());
     playerScore.textContent=playerWins;
     compScore.textContent=computerWins;
@@ -87,7 +90,19 @@ function clickToPlayRound(){
 
 }
 
+function removeTransition(event){
+    if (event.propertyName!=="transform"){
+        return;
+    }
+    
+    this.classList.remove("clicked");
+}
+
 
 for(const button of buttons){
     button.addEventListener("click",clickToPlayRound);
+}
+
+for (const button of buttons){
+    button.addEventListener("transitionend",removeTransition)
 }
