@@ -52,6 +52,15 @@ function playRound(playerSelection, computerSelection){
 
 const buttons = document.querySelectorAll("button");
 
+function reset(){
+
+    playerWins=0;
+    computerWins=0;
+    playerScore.textContent=playerWins;
+    compScore.textContent=computerWins;
+
+}
+
 function clickToPlayRound(){
 
     let roundResult = playRound(this.textContent, getComputerChoice());
@@ -68,11 +77,7 @@ function clickToPlayRound(){
             roundWinner.textContent="COMPUTER WON HEHEHAHA LOSERLUND";
         }
 
-        playerWins=0;
-        computerWins=0;
-        playerScore.textContent=playerWins;
-        compScore.textContent=computerWins;
-
+        reset();
         return;
     }
     
