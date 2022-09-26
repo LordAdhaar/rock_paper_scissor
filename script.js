@@ -9,6 +9,8 @@ function getComputerChoice(){
 
 let playerWins = 0;
 let computerWins = 0;
+const myUrlcomp = "./playAgain/compWins.html";
+const myUrlyou = "./playAgain/youWin.html";
 const playerScore = document.querySelector(".you p");
 const compScore = document.querySelector(".comp p");
 const roundWinner = document.querySelector(".roundWinner");
@@ -53,6 +55,15 @@ function playRound(playerSelection, computerSelection){
 const buttons = document.querySelectorAll("button");
 
 function reset(){
+
+
+    if (playerWins>computerWins){
+        window.location.replace(myUrlyou);
+    }
+    else{
+        window.location.replace(myUrlcomp);
+    }
+
 
     playerWins=0;
     computerWins=0;
