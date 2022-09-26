@@ -9,6 +9,9 @@ function getComputerChoice(){
 
 let playerWins = 0;
 let computerWins = 0;
+const playerScore = document.querySelector(".you p");
+const compScore = document.querySelector(".comp p");
+const roundWinner = document.querySelector(".roundWinner");
 
 function playRound(playerSelection, computerSelection){
 
@@ -47,27 +50,39 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(){
+const buttons = document.querySelectorAll("button");
 
-    for (let i = 0;  i<5 ; i++) {
-        console.log(playRound(prompt("Choose from Rock, Paper or Scissor", "Rock"),getComputerChoice()));
-        console.log(i);
-        
-    }
+function clickToPlayRound(){
 
-    console.log(playerWins);
-    console.log(computerWins);
+    let roundResult = playRound(this.textContent, getComputerChoice());
+    playerScore.textContent=playerWins;
+    compScore.textContent=computerWins;
 
-    if (playerWins>computerWins){
-        return "YOU WON THE GAME";
+    console.log(playerWins,computerWins,roundResult);
+
+    if (playerWins===5 || computerWins===5){
+        if(playerWins===5){
+            roundWinner.textContent="YOU WON";
+        }
+        else{
+            roundWinner.textContent="COMPUTER WON HEHEHAHA LOSERLUND";
+        }
+
+        playerWins=0;
+        computerWins=0;
+        playerScore.textContent=playerWins;
+        compScore.textContent=computerWins;
+
+        return;
     }
-    else if(playerWins===computerWins){
-        return "ITS A TIE";
-    }
-    else{
-        return "YOU LOST THE GAME"
-    }
+    
+    roundWinner.textContent=roundResult;
+
+
 
 }
 
-console.log(game());
+
+for(const button of buttons){
+    button.addEventListener("click",clickToPlayRound);
+}
