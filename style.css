@@ -15,6 +15,11 @@ body{
     font-size: 26px;
 }
 
+.header h3{
+    text-shadow: 2px 2px 0px black;
+
+}
+
 .scoreboard{
     display: flex;
     flex-direction: column;
